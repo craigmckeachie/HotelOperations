@@ -43,8 +43,9 @@ public class Reservation {
 
 
     public double getReservationTotal(){
-        double total = getPrice() * numberOfNights;
+        double total = getPrice() * this.numberOfNights;
         if (isWeekend) {
+            //If the stay is over a weekend, the price per night should increase by 10%
             total = total * 1.10;
         }
         return total;
