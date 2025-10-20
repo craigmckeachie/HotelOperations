@@ -33,7 +33,7 @@ public class Reservation {
     }
 
     //derived methods
-    public double getPrice() {
+    private double getPrice() {
         return switch (roomType.toLowerCase()) {
             case "king" -> 139;
             case "double" -> 124;
@@ -43,8 +43,10 @@ public class Reservation {
 
 
     public double getReservationTotal(){
-        throw new UnsupportedOperationException("Not implemented yet");
+        double total = getPrice() * numberOfNights;
+        if (isWeekend) {
+            total = total * 1.10;
+        }
+        return total;
     }
-
-
 }
