@@ -29,7 +29,7 @@ public class Room {
 
     //DO
     public void checkIn(){
-        if(isAvailable()){
+        if(!isAvailable()){
             throw new IllegalStateException("Cannot check in. Room is not available");
         }
         isOccupied = true;
@@ -44,7 +44,7 @@ public class Room {
         cleanRoom();
     }
 
-    public void cleanRoom(){
+    private void cleanRoom(){
         isDirty = false;
     }
 
