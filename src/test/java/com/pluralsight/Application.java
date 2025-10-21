@@ -11,11 +11,22 @@ public class Application {
 
         Hotel grandBudapestHotel = new Hotel("Grand Budapest Hotel", 15, 100);
         System.out.println(grandBudapestHotel);
-        if (grandBudapestHotel.bookRoom(101, false)) {
+
+
+        if (grandBudapestHotel.bookRoom(5, false)) {
             System.out.println(grandBudapestHotel);
         }else{
             System.out.println("Go home!");
         }
+
+
+        if (grandBudapestHotel.bookRoom(10, true)) {
+            System.out.println(grandBudapestHotel);
+        }else{
+            System.out.println("Go home snob!");
+        }
+
+
 
 
     }

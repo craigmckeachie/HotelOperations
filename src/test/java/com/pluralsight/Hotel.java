@@ -40,10 +40,17 @@ public class Hotel {
         if (isBasicRoom && (getAvailableRooms() >= numberOfRooms)) {
             bookedBasicRooms = bookedBasicRooms + numberOfRooms; //OR bookedBasicRooms += numberOfRooms;
             return true;
-        } else {
-            return false;
         }
+
+        if (isSuite && (getAvailableSuites() >= numberOfSuites)) {
+            bookedSuites = bookedSuites + numberOfRooms; //OR bookedSuites += numberOfRooms;
+            return true;
+        }
+
+        return false;
     }
+
+
 
     @Override
     public String toString() {
