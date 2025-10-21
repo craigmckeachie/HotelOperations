@@ -5,7 +5,7 @@ public class Room {
      private double price;
      private boolean isOccupied;
      private boolean isDirty;
-     private boolean isAvailable;
+
 
     public int getNumberOfBeds() {
         return numberOfBeds;
@@ -24,6 +24,28 @@ public class Room {
     }
 
     public boolean isAvailable() {
-        return isAvailable;
+        return  !isDirty && !isOccupied;
     }
+
+    //DO
+    public void checkIn(){
+        if(isAvailable()){
+            throw new IllegalStateException("Cannot check in. Room is not available");
+        }
+        isOccupied = true;
+        isDirty = true;
+    }
+
+    public void checkOut(){
+        if(isAvailable()){
+            throw new IllegalStateException("Room is available");
+        }
+        isOccupied = false;
+        cleanRoom();
+    }
+
+    public void cleanRoom(){
+        isDirty = false;
+    }
+
 }
