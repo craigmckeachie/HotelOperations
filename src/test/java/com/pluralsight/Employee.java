@@ -32,8 +32,7 @@ public class Employee {
 
     public double getOvertimeHours() {
         if (hoursWorked > REGULAR_HOURS) {
-            double overtimeHours = hoursWorked - REGULAR_HOURS;
-            return overtimeHours;
+            return hoursWorked - REGULAR_HOURS;
         } else {
             return 0;
         }
