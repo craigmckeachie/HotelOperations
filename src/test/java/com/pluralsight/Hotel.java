@@ -7,5 +7,11 @@ public class Hotel {
     private int bookedSuites;
     private int bookedBasicRooms;
 
-
+    public Hotel(String name, int numberOfSuites, int numberOfRooms) {
+        this.name = name;
+        this.numberOfSuites = numberOfSuites;
+        this.numberOfRooms = numberOfRooms;
+        this.bookedSuites = 0;
+        this.bookedBasicRooms = 0;
+    }
 }
