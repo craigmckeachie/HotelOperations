@@ -44,4 +44,15 @@ public class Hotel {
             return false;
         }
     }
+
+    @Override
+    public String toString() {
+        return "Hotel{" +
+                "name='" + name + '\'' +
+                ", numberOfSuites=" + numberOfSuites +
+                ", numberOfRooms=" + numberOfRooms +
+                ", bookedSuites=" + bookedSuites +
+                ", bookedBasicRooms=" + bookedBasicRooms +
+                '}';
+    }
 }
