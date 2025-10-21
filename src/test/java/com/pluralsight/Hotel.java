@@ -26,20 +26,21 @@ public class Hotel {
     }
 
     //getters
-    public int getAvailableSuites(){
+    public int getAvailableSuites() {
         return numberOfSuites - bookedSuites;
     }
 
-    public int getAvailableRooms(){
+    public int getAvailableRooms() {
         return numberOfRooms - bookedBasicRooms;
     }
 
 
-    public boolean bookRoom(int numberOfRooms, boolean isSuite){
-        if (getAvailableRooms() >= numberOfRooms) {
+    public boolean bookRoom(int numberOfRooms, boolean isSuite) {
+        boolean isBasicRoom = !isSuite;
+        if (isBasicRoom && (getAvailableRooms() >= numberOfRooms)) {
             bookedBasicRooms = bookedBasicRooms + numberOfRooms; //OR bookedBasicRooms += numberOfRooms;
             return true;
-        }else{
+        } else {
             return false;
         }
     }
